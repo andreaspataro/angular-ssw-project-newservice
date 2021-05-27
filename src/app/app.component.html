@@ -1,0 +1,34 @@
+<div *ngIf="apikey === undefined">
+  <input type="text" placeholder="inserire chiave api" #key />
+  <button (click)="setKey(key.value)">Inserisci</button>
+  <br />
+  <p>Non hai la chiave?</p>
+  <button (click)="getKey()">Ottieni Chiave</button>
+</div>
+
+<div *ngIf="apikey !== undefined">
+  <h3>Api Key utilizzata: {{apikey}}</h3>
+  <button (click)="important()" *ngIf="postIt.length != 0" id="buttonImportant">
+    Solo Post-It importanti
+  </button>
+
+  <div *ngFor="let post of postIt">
+    <div
+      *ngIf="importantSelector===false || (importantSelector === true && post.check === true)"
+    >
+      <button
+        (click)="showPost(post)"
+        [ngStyle]="{'background-color': (post.check=== true) ? '#fc8981' : '#73c7af'}"
+      >
+        {{post.title}}
+      </button>
+    </div>
+  </div>
+
+  <app-showpost
+    [postContent]="selezione"
+    [posts]="postIt"
+    [kvs]="kvs"
+  ></app-showpost>
+  <app-new-post (newPostEvent)="setVal($event)"></app-new-post>
+</div>

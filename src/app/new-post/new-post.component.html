@@ -1,0 +1,12 @@
+<input type="text" placeholder="titolo" #title />
+<br />
+<input type="text" placeholder="contenuto" #body />
+<br />
+<input type="checkbox" name="check" #check />
+<label for="check"> importante</label>
+<br />
+<button
+  (click)="newPost(title.value, body.value, check.checked); title.value ='';body.value = '';check.checked = false"
+>
+  Crea
+</button>

@@ -1,0 +1,5 @@
+<p *ngIf="postContent !== undefined">
+  {{postContent.body}}
+  <button (click)="clean()">Chiudi</button>
+  <button (click)="delete()">Elimina</button>
+</p>
