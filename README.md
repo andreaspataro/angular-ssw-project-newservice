@@ -1,6 +1,6 @@
 # angular-ssw-project-newservice
 
-Ogni Post-It è un'istanza della classe 'Post', i quali comprendono titolo, contenuto e un check(boolean) per contrassegnare il Post-It come 'importante'. I Post-It sono raggruppati all'interno di un array ('postIt').
+Ogni Post-It è un'istanza della classe 'Post', i quali comprendono titolo, contenuto e un check(boolean) per contrassegnare il Post-It come 'importante'. I Post-It sono raggruppati all'interno dell'array 'postIt'.
 
 Oltre all'app.component sono presenti due child component: new-post.component e showpost.component. Newpost.component è responsabile della parte di inserimento del Post-It, showpost.component si occupa di mostrare il contenuto del Post-It quando cliccato, della sua chiusura e della sua eliminazione.
 
@@ -10,7 +10,7 @@ Per l'eliminazione dei Post-It viene utilizzato il metodo 'delete()' contenuto a
 
 Se non si dispone di una chiave per usufruire del servizio keyvalue, si può richiedere attraverso il bottone 'Ottieni Chiave'. Viene fatta una richiesta al servizio, ottenuta la chiave, salvata all'interno della classe 'AppComponent' nella proprietà 'apikey' e viene caricato sul servizio l'array 'postIt', in quel momento vuoto.
 
-Se si dispone della chiave invece basta inserirla nel campo appostito e premere il bottone 'Inserisci', il quale chiama il metodo 'setKey()' che salva il valore della chiave all'interno del component App e sul servizio keyvalue. Successivamente vengono scaricati tutti i Post-It presenti sotto quella chiave.
+Se si dispone della chiave invece basta inserirla nel campo appostito e premere il bottone 'Inserisci', il quale chiama il metodo 'setKey()' che salva il valore della chiave all'interno della proprietà 'apikey' e sul servizio keyvalue. Successivamente vengono scaricati tutti i Post-It presenti sotto quella chiave.
 Se si inserisce una chiave non valida, al momento di scaricare i Post-It presenti sulla chiave verrà presentato un errore e la proprietà 'apikey' verrà impostata a valore undefined. Di conseguenza verrà nascosta la parte di visualizzazione dei Post-It e verrà mostrata la parte iniziale dell'app corrispondente all'inserimento/ottenimento di una chiave.
 
 
