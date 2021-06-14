@@ -65,5 +65,3 @@ export class AppComponent {
     });
   }
 }
-
-//38b8f3a3
